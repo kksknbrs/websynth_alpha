@@ -1,0 +1,121 @@
+.synth{
+    margin: 0 auto;
+    border: solid 1px;
+    width: 700px;
+    height: 530px;
+    background-color: #585858;
+}
+
+.title{
+    border: solid 1px;
+    width: 150px;
+    text-align: center;
+}
+
+.oscContainer{
+    float: left;
+    border: solid 1px;
+    width: 200px;
+    
+    .topOscContainer{
+        float: left;
+        width: 200px;
+        text-align: center;
+        border-bottom: solid 1px;
+
+        .waveformContainer{
+            float: left;
+            width: 100px;
+        }
+
+        .voiceContainer{
+            float:left;
+            width: 100px;
+        } 
+    }
+
+    .bottomOscContainer{
+        border: solid 1px;
+        width: 200px;
+        text-align: center;
+
+        .oscGain{
+            float: left;
+            width: 100px;
+        }
+        
+        .detuneContainer{
+            float:left;
+            width: 100px;
+        }
+
+    }
+}
+
+.ampContainer{
+    border: 1px solid;
+    float: left;
+
+    .ampSlider{
+        float: left;
+        padding-right: 5px;
+
+        p{
+            text-align: center;
+        }
+    }
+}
+
+.filterContainer{
+    float: left;
+    border: 1px solid;
+    width: 270px;
+
+    .filterKnob{
+        width: 65px;
+        float: left;
+        padding: 2px;
+
+        .cutoff p{
+            text-align: center;
+        }
+
+        .res p{
+            text-align: center;
+            font-size: 13px;
+        }
+    }
+    .filterADSR{
+        float: left;
+
+        .filterSlider{
+            float: left;
+            padding-right: 5px;
+
+            p{
+                text-align: center;
+            }
+        }
+    }
+
+    .filterAmount{
+        padding: 5px;
+    }
+}
+
+.LFOcontainer{
+    float:left;
+    border: 1px solid;
+
+    .LFOKnob{
+        padding: 5px;
+        text-align: center;
+    }
+
+    
+}
+
+#keyboard{
+    float: left;
+    margin-left: 50px;
+}

@@ -1,0 +1,82 @@
+.synth {
+  margin: 0 auto;
+  border: solid 1px;
+  width: 700px;
+  height: 530px;
+  background-color: #585858; }
+
+.title {
+  border: solid 1px;
+  width: 150px;
+  text-align: center; }
+
+.oscContainer {
+  float: left;
+  border: solid 1px;
+  width: 200px; }
+  .oscContainer .topOscContainer {
+    float: left;
+    width: 200px;
+    text-align: center;
+    border-bottom: solid 1px; }
+    .oscContainer .topOscContainer .waveformContainer {
+      float: left;
+      width: 100px; }
+    .oscContainer .topOscContainer .voiceContainer {
+      float: left;
+      width: 100px; }
+  .oscContainer .bottomOscContainer {
+    border: solid 1px;
+    width: 200px;
+    text-align: center; }
+    .oscContainer .bottomOscContainer .oscGain {
+      float: left;
+      width: 100px; }
+    .oscContainer .bottomOscContainer .detuneContainer {
+      float: left;
+      width: 100px; }
+
+.ampContainer {
+  border: 1px solid;
+  float: left; }
+  .ampContainer .ampSlider {
+    float: left;
+    padding-right: 5px; }
+    .ampContainer .ampSlider p {
+      text-align: center; }
+
+.filterContainer {
+  float: left;
+  border: 1px solid;
+  width: 270px; }
+  .filterContainer .filterKnob {
+    width: 65px;
+    float: left;
+    padding: 2px; }
+    .filterContainer .filterKnob .cutoff p {
+      text-align: center; }
+    .filterContainer .filterKnob .res p {
+      text-align: center;
+      font-size: 13px; }
+  .filterContainer .filterADSR {
+    float: left; }
+    .filterContainer .filterADSR .filterSlider {
+      float: left;
+      padding-right: 5px; }
+      .filterContainer .filterADSR .filterSlider p {
+        text-align: center; }
+  .filterContainer .filterAmount {
+    padding: 5px; }
+
+.LFOcontainer {
+  float: left;
+  border: 1px solid; }
+  .LFOcontainer .LFOKnob {
+    padding: 5px;
+    text-align: center; }
+
+#keyboard {
+  float: left;
+  margin-left: 50px; }
+
+/*# sourceMappingURL=style.css.map */
