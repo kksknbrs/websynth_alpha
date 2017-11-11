@@ -6,133 +6,133 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <div class="synth">
-            <div class="title">
+        <div id="synth">
+            <div id="title">
                 <h2>HogeSynth</h2>
             </div>
+            <div class="Controls">
 
-            <div class="oscContainer">
-                <div class="topOscContainer">
-
-                        <div class="waveformContainer">
+                <div class="oscContainer">
+                    <div class="waveformVoice">
+                        <div class="labelContainer">
                             <select id="waveform1">
-                            <option value="sine">Sine</option>
-                            <option value="square">Square</option>
-                            <option value="sawtooth">Sawtooth</option>
-                            <option value="triangle">Triangle</option>
-                        </select> 
-                        <p> Waveform</p>
+                                <option value="sine">Sine</option>
+                                <option value="square">Square</option>
+                                <option value="sawtooth">Sawtooth</option>
+                                <option value="triangle">Triangle</option>
+                            </select> 
+                            <label> Waveform</label>
                         </div>
-
-                    <div class="voiceContainer">
-                        <select id="voices1">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                        </select> 
-                        <p>Voice</p>
+                        <div class="labelContainer">
+                            <select id="voices1">
+                                <option value="0">0</option>
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select> 
+                            <label>Voice</label>
+                        </div>
+                        <div class="labelContainer">
+                            <select id="octave1">
+                                <option value="-3">-3</option>
+                                <option value="-2">-2</option>
+                                <option value="-1">-1</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select> 
+                            <label>Octave</label>
+                        </div>
+                    </div>
+                    <div class="detune">
+                        <div class="labelContainer">
+                            <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="40" step="1" value="0" id="detune1"> </webaudio-knob>
+                            <label>Detune</label>
+                        </div>
+                    </div>
+                    <div class="sliderContainer">
+                        <div class="Slider">
+                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="8" step="0.01" value="0" id="attack1"></webaudio-slider>
+                            <label>A</label>
+                        </div>
+                        <div class="Slider">
+                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="2" step="0.01" value="0" id="decay1"></webaudio-slider>
+                            <label>D</label>
+                        </div>
+                        <div class="Slider">
+                        <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1" step="0.01" value="1" id="sustain1"></webaudio-slider>
+                            <label>S</label>
+                        </div>
+                        <div class="Slider">
+                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1" step="0.01" value="0" id="release1"></webaudio-slider>
+                            <label>R</label>
+                        </div>
+                        <div class="Slider">
+                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1.0" step="0.01" value="0.5" id="gain1"></webaudio-slider>
+                            <label>Gain</label>
+                        </div>
+                    </div>
+                    <div class="sliderContainer">
+                        <div class="Slider">
+                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="8" step="0.01" value="0" id="envattack1"></webaudio-slider>
+                            <label>A</label>
+                        </div>
+                        <div class="Slider">
+                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="2" step="0.01" value="0" id="envdecay1"></webaudio-slider>
+                            <label>D</label>
+                        </div>
+                        <div class="Slider">
+                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1" step="0.01" value="1" id="envsustain1"></webaudio-slider>
+                            <label>S</label>
+                        </div>
+                        <div class="Slider">
+                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1" step="0.01" value="0" id="envrelease1"></webaudio-slider>
+                            <label>R</label>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="bottomOscContainer">
-                    <div class="oscGain">
-                        <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1.0" step="0.01" value="0.5" id="gain1"></webaudio-slider>
-                        <p>Gain</p>
-                    </div>
-                    
-                    <div class="detuneContainer">
-                        <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="40" step="1" value="0" id="detune1"> </webaudio-knob>
-                        <p>Detune</p>
-                    </div>
-                </div>
-
             </div>
-            
-            <div class="ampContainer">
-                <div class="ampSlider">
-                    <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="8" step="0.01" value="0" id="attack1"></webaudio-slider>
-                    <p>A</p>
-                </div>
-                        
-                <div class="ampSlider">
-                    <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="2" step="0.01" value="0" id="decay1"></webaudio-slider>
-                    <p>D</p>
-                </div>
-                <div class="ampSlider">
-                <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1" step="0.01" value="1" id="sustain1"></webaudio-slider>
-
-                    <p>S</p>
-                </div>
-
-                <div class="ampSlider">
-                    <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1" step="0.01" value="0" id="release1"></webaudio-slider>
-                    <p>R</p>
-                </div>
-                
-                
-
-            </div>
-
-            <div class="filterContainer">
-                <div class="filterKnob">
-                    <div class="cutoff">
-                        <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="22050" step="1" value="22050" units="Hz" log="1" id="cutoff1"> </webaudio-knob> 
-                        <p>Cutoff</p>        
+            <div class="Controls">
+                <div class="filterContainer">
+                    <div class="labelContainer">
+                        <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="22050" step="1" value="22050" units="Hz" log="1"" id="cutoff1"> </webaudio-knob> 
+                        <label>Cutoff</label>        
                     </div>
-                    <div class="res">
+                    <div class="labelContainer">
                         <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="100" step="1" value="0" id="res1"> </webaudio-knob> 
-                        <p>Resonance</p>
+                        <label>Resonance</label>
                     </div>
-                </div> 
-
-                <div class="filterADSR">
-                    <div class="filterSlider">
-                        <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="8" step="0.01" value="0" id="envattack1"></webaudio-slider>
-                        <p>A</p>
+                    <div class="labelContainer">
+                        <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="-22050" max="22050" step="1" value="0" id="amount1"> </webaudio-knob> 
+                        <label>Amount</label>
                     </div>
-                    <div class="filterSlider">
-                        <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="2" step="0.01" value="0" id="envdecay1"></webaudio-slider>
-                        <p>D</p>
-                    </div>
-
-                    <div class="filterSlider">
-                        <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1" step="0.01" value="1" id="envsustain1"></webaudio-slider>
-                        <p>S</p>
-                    </div>
-
-                    <div class="filterSlider">
-                        <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1" step="0.01" value="0" id="envrelease1"></webaudio-slider>
-                        <p>R</p>
-                    </div>
-                </div> 
-                <div class="filterAmount">
-                    <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="-22050" max="22050" step="1" value="0" id="amount1"> </webaudio-knob> 
-                    <p>Amount</p>
                 </div>
-            </div>
 
-            <div class="LFOcontainer">
-                <div class="LFOKnob">
-                    <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="10" step="0.01" value="0" id="rate1"> </webaudio-knob> 
-                    <p>Rate</p>
-                </div>
-                <div class="LFOKnob">
-                    <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="1000" step="1" value="0" id="lfoGain1"> </webaudio-knob> 
-                    <p>Amount</p>
-                </div>
-                <select id="connectTo1">
+                <div class="LFOcontainer">
+                    <div class="labelContainer">
+                        <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="10" step="0.01" value="0" id="rate1"> </webaudio-knob> 
+                        <label>Rate</label>
+                    </div>
+                    <div class="labelContainer">
+                        <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="1000" step="1" value="0" id="lfoGain1"> </webaudio-knob> 
+                        <label>Amount</label>
+                    </div>
+                    <select id="connectTo1">
                         <option value="None">None</option>
                         <option value="Oscillator">Oscillator</option>
                         <option value="Filter">Filter</option>
-                </select> 
-            </div>
+                    </select> 
+                </div>
 
+            </div>
+            <!-- <input type="text" class="dial"> -->
             <div id="keyboard"></div>
         </div>
 
@@ -140,6 +140,8 @@
         <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
         <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/webaudio-controls/webaudio-controls.html" >
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/jquery-knob/dist/jquery.knob.min.js"></script>
         <script src="js/qwerty-hancock.js"></script>
         <script src="js/js_synth.js"></script>
     </body>

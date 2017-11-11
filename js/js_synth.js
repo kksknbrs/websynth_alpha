@@ -15,7 +15,9 @@ var ctx = new AudioContext();
 var VoiceContainer = function(frequency){
     this.voices = [];
     this.voiceNum = document.getElementById("voices1").value;
-    this.frequency = frequency;
+    // this.octave = parseInt(document.getElementById('cutoff1').value);
+    this.octave = document.getElementById("octave1").value;
+    this.frequency = frequency * Math.pow(2, this.octave);
     this.detune = parseFloat(document.getElementById("detune1").value); 
     this.gain = ctx.createGain();
     this.filter = ctx.createBiquadFilter();
@@ -170,6 +172,7 @@ var nodes = []; // 演奏されているノードを格納（減衰中のもの�
 var releasing_nodes = []; // 減衰している音のノードを格納
 
 keyboard.keyDown = function (note, frequency) {
+    
     var node = new VoiceContainer(frequency);
     var lfo = new LFOcontainer();
 
@@ -186,12 +189,11 @@ keyboard.keyDown = function (note, frequency) {
 
 keyboard.keyUp = function (note, frequency) {
     var new_nodes = [];
-    
     // Release
     // KeyUpされなかったnode -> new_nodes -> nodes
     // KeyUpされたnode -> releaseing_nodes -> 減衰が終われば、切る(stopNote())
     for(var i=0; i<nodes.length; i++){
-        if(nodes[i].frequency === frequency){
+        if(nodes[i].frequency === frequency * Math.pow(2,nodes[i].octave)){
             nodes[i].gain.gain.cancelScheduledValues(0);
             nodes[i].gain.gain.linearRampToValueAtTime(0.0,ctx.currentTime+nodes[i].release);
             
@@ -217,3 +219,9 @@ keyboard.keyUp = function (note, frequency) {
     nodes = new_nodes;
 }
 
+$(function() {
+    $(".dial").knob({
+         'min': 0,      //最小値
+         'max':200      //最大値
+    });
+});

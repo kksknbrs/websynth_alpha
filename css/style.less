@@ -1,0 +1,121 @@
+@import "normalize.less";
+@import "preboot.less";
+@import "flexbox.less";
+
+@phi:          1.61803399;
+@size-nano:    unit(pow(@phi, -4), rem);
+@size-micro:   unit(pow(@phi, -3), rem);
+@size-tiny:    unit(pow(@phi, -2), rem);
+@size-small:   unit(pow(@phi, -1), rem);
+@size-base:    unit(pow(@phi,  0), rem);
+@size-large:   unit(pow(@phi,  1), rem);
+@size-huge:    unit(pow(@phi,  2), rem);
+@size-massive: unit(pow(@phi,  3), rem);
+@size-epic:    unit(pow(@phi,  4), rem);
+
+@synth-color: #556972;
+@header-color: #09c39b;
+
+html {
+    width: 100%;
+    height: 100%;
+  }
+  
+body {
+    width: 100%;
+    height: 100%;
+    font-family: @font-family-base;
+    #gradient.radial(@header-color, darken(@header-color, 34%));
+    .user-select(none);
+    .flex-display;
+    .align-items(center);
+    .justify-content(center);
+}
+
+#synth{
+    #gradient.vertical(lighten(@synth-color, 30%), @synth-color);
+    padding-left: @size-micro;
+    padding-right: @size-micro;
+    border-radius: @size-nano;
+    .box-shadow(0 0 @size-base rgba(0,0,0,0.5));
+}
+
+
+#title{
+    height: 50px;
+    text-align: center;
+    color: darken(@synth-color, 10%);
+    text-shadow: 0 1px 0 lighten(@synth-color, 35%);
+}
+
+.Controls {
+    padding: @size-base;
+    margin-top: @size-small;
+    .border-top-radius(@size-nano);
+    .box-sizing(border-box);
+    .flex-display;
+    .flex-direction(row);
+    
+
+    .labelContainer{
+        .flex-display;
+        .flex-direction(column);
+
+    }
+    .oscContainer{
+        .flex-display;
+        .flex-direction(row);
+    
+
+        .waveformVoice{
+           .flex-display; 
+           text-align: center;
+           padding-right: @size-base;
+        }
+
+        .detune{
+            .flex-display;
+            padding-right: @size-base;
+        }
+    }
+    .sliderContainer{
+        .flex-display;
+        padding-right: @size-base;
+
+        .Slider{
+            .flex-display;
+            .flex-direction(column);
+            padding: @size-nano;
+
+            label{
+                text-align: center;
+
+            }
+        }
+    }
+    .filterContainer{
+        .flex-display;
+
+        .labelContainer{
+            padding-right: @size-base;
+            text-align: center;
+        }
+    }
+    .LFOcontainer{
+        .flex-display;
+        .labelContainer{
+            padding-right: @size-base;
+            text-align: center;
+        }
+    }
+}
+
+label {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: darken(@synth-color, 10%);
+    text-shadow: 0 1px 0 lighten(@synth-color, 35%);
+  }
+

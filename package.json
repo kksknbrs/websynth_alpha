@@ -1,0 +1,26 @@
+{
+  "name": "websynth_alpha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kksknbrs/websynth_alpha.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kksknbrs/websynth_alpha/issues"
+  },
+  "homepage": "https://github.com/kksknbrs/websynth_alpha#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2",
+    "jquery": "^3.2.1",
+    "jquery-knob": "^1.2.11",
+    "less": "^2.7.3"
+  }
+}
