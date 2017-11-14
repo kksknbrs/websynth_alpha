@@ -18,7 +18,7 @@
                             <select id="waveform1">
                                 <option value="sine">Sine</option>
                                 <option value="square">Square</option>
-                                <option value="sawtooth">Sawtooth</option>
+                                <option value="sawtooth" selected>Sawtooth</option>
                                 <option value="triangle">Triangle</option>
                             </select> 
                             <label> Waveform</label>
@@ -42,7 +42,7 @@
                                 <option value="-3">-3</option>
                                 <option value="-2">-2</option>
                                 <option value="-1">-1</option>
-                                <option value="0">0</option>
+                                <option value="0" selected>0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -70,7 +70,7 @@
                             <label>S</label>
                         </div>
                         <div class="Slider">
-                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0" max="1" step="0.01" value="0" id="release1"></webaudio-slider>
+                            <webaudio-slider src="bower_components/webaudio-controls/img/vsliderbody.png" knobsrc="bower_components/webaudio-controls/img/vsliderknob.png" min="0.01" max="1" step="0.01" value="0" id="release1"></webaudio-slider>
                             <label>R</label>
                         </div>
                         <div class="Slider">
@@ -102,7 +102,7 @@
             <div class="Controls">
                 <div class="filterContainer">
                     <div class="labelContainer">
-                        <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="22050" step="1" value="22050" units="Hz" log="1"" id="cutoff1"> </webaudio-knob> 
+                        <webaudio-knob src="bower_components/webaudio-controls/img/LittlePhatty.png" sprites="100" min="0" max="10" step="0.01" value="50" id="cutoff1"></webaudio-knob> 
                         <label>Cutoff</label>        
                     </div>
                     <div class="labelContainer">

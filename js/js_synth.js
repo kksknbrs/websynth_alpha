@@ -15,13 +15,15 @@ var ctx = new AudioContext();
 var VoiceContainer = function(frequency){
     this.voices = [];
     this.voiceNum = document.getElementById("voices1").value;
-    // this.octave = parseInt(document.getElementById('cutoff1').value);
     this.octave = document.getElementById("octave1").value;
     this.frequency = frequency * Math.pow(2, this.octave);
     this.detune = parseFloat(document.getElementById("detune1").value); 
     this.gain = ctx.createGain();
     this.filter = ctx.createBiquadFilter();
-    this.basefreq = parseInt(document.getElementById('cutoff1').value); // parseIntを噛ませないとbasefreq+envAmountがめちゃ大きくなる
+    // this.basefreq = parseInt(document.getElementById('cutoff1').value); // parseIntを噛ませないとbasefreq+envAmountがめちゃ大きくなる
+    // this.basefreq = Math.pow(2.7,parseFloat(document.getElementById('cutoff1').value)); // parseIntを噛ませないとbasefreq+envAmountがめちゃ大きくなる
+    this.basefreq = Math.exp(parseFloat(document.getElementById('cutoff1').value)); // parseIntを噛ませないとbasefreq+envAmountがめちゃ大きくなる
+    console.log(this.basefreq);
     this.release = parseFloat(document.getElementById('release1').value);
     this.envRelease = parseFloat(document.getElementById('envrelease1').value);
     this.thatTime;
@@ -96,7 +98,7 @@ VoiceContainer.prototype.updateADSR = function(node){
     this.filter.Q.value = document.getElementById('res1').value;
     this.filter.frequency.value = this.basefreq;
 
-    i
+    
     // 新しくできたOscノードをGainノードに接続
 
     for(var i=0;i<node.voiceNum;i++){
@@ -113,19 +115,19 @@ VoiceContainer.prototype.updateADSR = function(node){
     this.filter.frequency.setValueAtTime(this.basefreq, this.now);
 
     if(this.basefreq+this.envAmount > 22050){
-        this.filter.frequency.linearRampToValueAtTime(22050, this.now + this.envAttack);
+        this.filter.frequency.exponentialRampToValueAtTime(22050, this.now + this.envAttack);
     } else if (this.basefreq+this.envAmount < 0){
-        this.filter.frequency.linearRampToValueAtTime(0, this.now + this.envAttack);
+        this.filter.frequency.exponentialRampToValueAtTime(1, this.now + this.envAttack);
     } else {
-        this.filter.frequency.linearRampToValueAtTime(this.basefreq+this.envAmount, this.now + this.envAttack);
+        this.filter.frequency.exponentialRampToValueAtTime(this.basefreq+this.envAmount, this.now + this.envAttack);
     }
 
     if(this.envSustain+1 * this.basefreq > 22050){
-        this.filter.frequency.linearRampToValueAtTime(22050, this.now + this.envAttack + this.envDecay);
+        this.filter.frequency.exponentialRampToValueAtTime(22050, this.now + this.envAttack + this.envDecay);
     } else if(this.envSustain+1 * this.basefreq < 0){
-        this.filter.frequency.linearRampToValueAtTime(0, this.now + this.envAttack + this.envDecay);
+        this.filter.frequency.exponentialRampToValueAtTime(1, this.now + this.envAttack + this.envDecay);
     } else {
-        this.filter.frequency.linearRampToValueAtTime(this.envSustain+1 * this.basefreq, this.now + this.envAttack + this.envDecay);
+        this.filter.frequency.exponentialRampToValueAtTime(this.envSustain+1 * this.basefreq, this.now + this.envAttack + this.envDecay);
     }
 
     node.gain.connect(this.filter);
@@ -218,10 +220,3 @@ keyboard.keyUp = function (note, frequency) {
     
     nodes = new_nodes;
 }
-
-$(function() {
-    $(".dial").knob({
-         'min': 0,      //最小値
-         'max':200      //最大値
-    });
-});
